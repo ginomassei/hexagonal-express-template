@@ -1,16 +1,17 @@
-import { User } from '../../domain/models/user';
+import { getModelForClass, mongoose, prop } from 'mongo-connect-provider';
 
-export const USERS: User[] = [
-  {
-    id: '1',
-    email: 'albert@gmail.com'
-  },
-  {
-    id: '2',
-    email: 'juan@gmail.com'
-  },
-  {
-    id: '3',
-    email: 'pepe@gmail.com'
-  }
-];
+class User {
+  _id?: mongoose.Schema.Types.ObjectId;
+
+  @prop({ unique: true, index: true })
+  email: string;
+
+  @prop()
+  firstName: string;
+
+  @prop()
+  lastName: string;
+}
+
+const UserModel = getModelForClass(User);
+export default UserModel;
