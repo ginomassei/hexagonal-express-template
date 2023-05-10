@@ -3,14 +3,20 @@ import { getModelForClass, mongoose, prop } from 'mongo-connect-provider';
 class User {
   _id?: mongoose.Schema.Types.ObjectId;
 
-  @prop({ unique: true, index: true })
+  @prop({ type: String, unique: true, index: true })
   email: string;
 
-  @prop()
+  @prop({ type: String })
   firstName: string;
 
-  @prop()
+  @prop({ type: String })
   lastName: string;
+
+  @prop({ type: String })
+  password: string;
+
+  @prop({ type: String })
+  userName: string;
 }
 
 const UserModel = getModelForClass(User);

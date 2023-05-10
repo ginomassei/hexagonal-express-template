@@ -11,7 +11,7 @@
     "declaration": true,
     "noEmit": false,
     "resolveJsonModule": true,
-    "typeRoots": ["./node_modules/@types"],
+    "typeRoots": ["src/types", "./node_modules/@types"],
     "noUnusedLocals": true,
     "outDir": "./dist",
     "skipLibCheck": true,
