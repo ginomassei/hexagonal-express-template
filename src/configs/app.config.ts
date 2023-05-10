@@ -3,7 +3,7 @@ export const config = {
     port: process.env.PORT || 3000
   },
   cors: {
-    origin: process.env.CORS_ORIGIN || '*'
+    origins: ['http://localhost:4200', 'http://localhost:9000']
   },
   database: {
     dbHost: process.env.DB_URI || '127.0.0.1:27017'

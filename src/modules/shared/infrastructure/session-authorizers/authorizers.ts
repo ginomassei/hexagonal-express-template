@@ -8,7 +8,7 @@ export const authorizers: AuthorizerFunction[] = [
       };
     }
     return {
-      error: new Error('Session must have an user'),
+      error: new Error('Invalid session: session user not found'),
       valid: false
     };
   }
