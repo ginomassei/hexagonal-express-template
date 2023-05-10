@@ -24,7 +24,10 @@ function startServer() {
   app.listen(port, async () => {
     await connectDb();
     logger.info(`App started on port: ${port}`);
+
+    // Configure session handler
     SessionHandler.registerAuthorizers(authorizers);
+    SessionHandler.setLogger(logger);
   });
 }
 

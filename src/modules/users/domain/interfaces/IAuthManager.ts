@@ -1,5 +1,5 @@
 import { User } from '../models/user';
 
-export interface IAuthenticationManager {
+export interface IAuthManager {
   authenticateUser(userName: string, password: string): Promise<User | null>;
 }

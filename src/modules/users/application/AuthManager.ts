@@ -1,10 +1,10 @@
 import bcrypt from 'bcryptjs';
 
-import { IAuthenticationManager } from '../domain/interfaces/IAuthenticationManager';
+import { IAuthManager } from '../domain/interfaces/IAuthManager';
 import { IUserRepository } from '../domain/interfaces/IUserRepository';
 import { User } from '../domain/models/user';
 
-export class AuthenticationManager implements IAuthenticationManager {
+export class AuthManager implements IAuthManager {
   constructor(private readonly userRepository: IUserRepository) {}
 
   async authenticateUser(email: string, password: string): Promise<User | null> {

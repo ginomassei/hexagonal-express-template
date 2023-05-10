@@ -1,12 +1,12 @@
-import { AuthenticationController } from '../../users/infrastructure/rest/authentication/authentication.controller';
-import { AuthenticationManager } from '../application/AuthenticationManager';
+import { AuthManager } from '../application/AuthManager';
 import { MongoUserRepository } from './repository/MongoUserRepository';
+import { AuthController } from './rest/authentication/auth.controller';
 import { UserController } from './rest/user.controller';
 
 const userMongoRepository = new MongoUserRepository();
 
-const authenticationManager = new AuthenticationManager(userMongoRepository);
+const authManager = new AuthManager(userMongoRepository);
 
-export const authenticationController = new AuthenticationController(authenticationManager);
+export const authController = new AuthController(authManager);
 
 export const userController = new UserController();

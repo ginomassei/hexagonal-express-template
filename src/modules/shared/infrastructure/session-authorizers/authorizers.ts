@@ -1,10 +1,15 @@
 import { AuthorizerFunction, Session } from 'session-manager-express';
 
 export const authorizers: AuthorizerFunction[] = [
-  async (session: Session) => {
-    if (session.user.id === '1') {
-      return true;
+  (session: Session) => {
+    if (session.user) {
+      return {
+        valid: true
+      };
     }
-    return false;
+    return {
+      error: new Error('Session must have an user'),
+      valid: false
+    };
   }
 ];
