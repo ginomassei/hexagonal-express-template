@@ -11,4 +11,5 @@ export interface ILogger {
   info(message: Message): void;
   error(message: Message): void;
   warn(message: Message): void;
+  log(message: Message): void;
 }

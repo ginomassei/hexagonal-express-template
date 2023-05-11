@@ -29,4 +29,8 @@ export class PinoLogger implements ILogger {
   warn(message: Message): void {
     this.logger.warn(message);
   }
+
+  log(message: Message): void {
+    this.logger.info(message);
+  }
 }
