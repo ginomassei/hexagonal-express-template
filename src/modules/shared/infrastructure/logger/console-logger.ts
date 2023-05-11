@@ -1,8 +1,12 @@
 import { ILogger, Message } from '../../domain/ILogger';
 
 export class ConsoleLogger implements ILogger {
-  info(message: Message): void {
+  log(message: Message): void {
     console.log(message);
+  }
+
+  info(message: Message): void {
+    console.info(message);
   }
 
   error(message: Message): void {
