@@ -15,7 +15,8 @@
     "build:tsc": "tsc -p tsconfig.prod.json",
     "start": "node dist/src/main.js",
     "validate-dependencies": "depcruise --config .dependency-cruiser.js src",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "postinstall": "husky install"
   },
   "engines": {
     "node": ">=18.0.0",
