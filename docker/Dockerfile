@@ -16,7 +16,7 @@ WORKDIR /app
 # install app dependencies
 COPY package*.json ./
 
-RUN npm ci --omit=dev
+RUN npm ci --omit=dev --ignore-scripts
 
 # bundle app source
 COPY . ./
